@@ -33,8 +33,22 @@ function addStudent() {
 
     if (editIndex === null) {
         let row = table.insertRow();
-        
+        row.insertCell(0).innerHTML = name;
+        row.insertCell(1).innerHTML = temp;
+        row.insertCell(2).innerHTML = sicknessText;
+        row.insertCell(3).innerHTML = `
+        <button class='btn-edit' onclick='editStudent(this)'>Edit</button>
+        <button class='btn-delete' onclick='deleteStudent(this)'>Delete</button>
+        `;
+    } else {
+        let row = table.rows[editIndex];
+        row.cells[0].innerHTML = name;
+        row.cells[1].innerHTML = temp;
+        row.cells[2].innerHTML = sicknessText;
+        editIndex = null;
     }
+
+    clearInputs();
     
 
 
