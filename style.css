@@ -28,3 +28,34 @@ h2 {
     color: #333;
 }
 
+input, button, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #4a76e8;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+button {
+    background: #4a76e8;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: #3a5cc0;
+}
