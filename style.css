@@ -23,18 +23,24 @@ h2 {
 }
 
 .box h3 {
-    text-align: center;
+    text-align: justify;
     margin-bottom: 15px;
     color: #313030;
 }
 
+h3 {
+    text-align: justify;
+    margin-left: 145px;
+}
+
 input, button, select {
-    width: 100%;
+    width: 94%;
     padding: 10px;
     margin-top: 8px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+
 }
 
 input:focus, select:focus {
@@ -43,8 +49,10 @@ input:focus, select:focus {
 }
 
 .checkbox-group label {
-    display: block;
-    margin-bottom: 8px;
+    display: inline-block;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-left: 6px;
 }
 
 button {
@@ -54,6 +62,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     border-radius: 6px;
+    width: 100%;
 }
 
 button:hover {
