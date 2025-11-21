@@ -50,7 +50,14 @@ function addStudent() {
 
     clearInputs();
     
-
-
-
 }
+
+function editStudent(button) {
+    let row = button.parentNode.parentNode;
+    editIndex = row.rowIndex - 1;
+
+    document.getElementById("StudentName").value - row.cells[0].innerHTML;
+    document.getElementById("temperature").value - row.cells[1].innerHTML;
+
+    
+}   
