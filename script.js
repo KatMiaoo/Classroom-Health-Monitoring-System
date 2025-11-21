@@ -7,6 +7,13 @@ function addStudent() {
     let sicknessList = [];
     let checkboxes = document.getElementById("sickOption");
 
+    for(let box of checkboxes) {
+        if (box.checked) {
+            sicknessList.push(box.value);
+        }
+    }
+
+    
     
 
 
