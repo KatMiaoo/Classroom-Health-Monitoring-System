@@ -5,9 +5,9 @@ function addStudent() {
     let temp = document.getElementById("temperature").value;
 
     let sicknessList = [];
-    let checkboxes = document.getElementById("sickOption");
+    let checkboxes = document.getElementsByClassName("sickOption");
 
-    for(let box of checkboxes) {
+    for (let box of checkboxes) {
         if (box.checked) {
             sicknessList.push(box.value);
         }
@@ -23,9 +23,7 @@ function addStudent() {
 
     if (sicknessList.length === 0) {
         sicknessList.push("None");
-
     }
-
 
     let sicknessText = sicknessList.join(", ");
 
@@ -37,8 +35,8 @@ function addStudent() {
         row.insertCell(1).innerHTML = temp;
         row.insertCell(2).innerHTML = sicknessText;
         row.insertCell(3).innerHTML = `
-        <button class='btn-edit' onclick='editStudent(this)'>Edit</button>
-        <button class='btn-delete' onclick='deleteStudent(this)'>Delete</button>
+            <button class='btn-edit' onclick='editStudent(this)'>Edit</button>
+            <button class='btn-delete' onclick='deleteStudent(this)'>Delete</button>
         `;
     } else {
         let row = table.rows[editIndex];
@@ -49,40 +47,41 @@ function addStudent() {
     }
 
     clearInputs();
-    
 }
 
 function editStudent(button) {
     let row = button.parentNode.parentNode;
     editIndex = row.rowIndex - 1;
 
-    document.getElementById("StudentName").value - row.cells[0].innerHTML;
-    document.getElementById("temperature").value - row.cells[1].innerHTML;
+    document.getElementById("studentName").value = row.cells[0].innerHTML;
+    document.getElementById("temperature").value = row.cells[1].innerHTML;
 
-    let sickness = row.cells[2].innerHTML.split(", ");
+    let sicknesses = row.cells[2].innerHTML.split(", ");
 
-    let checkboxes = document.getElementById("sickOption");
-    for (let box of heckboxes) box.checked = false;
+    let checkboxes = document.getElementsByClassName("sickOption");
+    for (let box of checkboxes) box.checked = false;
 
-    sickness.forEach(s =>{
+    sicknesses.forEach(s => {
         for (let box of checkboxes) {
-            if (box.value === s) box=checked = true;
+            if (box.value === s) box.checked = true;
         }
     });
 
-    document.getElementById("maualSickness").vanue = "";
+    document.getElementById("manualSickness").value = "";
+}
 
-    function deleteStudent(button) {
+function deleteStudent(button) {
+    if (confirm("Delete this student?")) {
         let row = button.parentNode.parentNode;
-        row.parentNode.removeChild(row)
+        row.parentNode.removeChild(row);
     }
-}   
+}
 
 function clearInputs() {
     document.getElementById("studentName").value = "";
     document.getElementById("temperature").value = "";
-    document.getElementById(" manualSickness").value = "";
+    document.getElementById("manualSickness").value = "";
 
-    let checkboxes = document.getElementById("sickOption");
-    for (let box of  checkboxes) BaseAudioContext.checked = false;self
+    let checkboxes = document.getElementsByClassName("sickOption");
+    for (let box of checkboxes) box.checked = false;
 }
