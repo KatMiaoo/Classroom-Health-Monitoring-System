@@ -59,5 +59,30 @@ function editStudent(button) {
     document.getElementById("StudentName").value - row.cells[0].innerHTML;
     document.getElementById("temperature").value - row.cells[1].innerHTML;
 
-    
+    let sickness = row.cells[2].innerHTML.split(", ");
+
+    let checkboxes = document.getElementById("sickOption");
+    for (let box of heckboxes) box.checked = false;
+
+    sickness.forEach(s =>{
+        for (let box of checkboxes) {
+            if (box.value === s) box=checked = true;
+        }
+    });
+
+    document.getElementById("maualSickness").vanue = "";
+
+    function deleteStudent(button) {
+        let row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row)
+    }
 }   
+
+function clearInputs() {
+    document.getElementById("studentName").value = "";
+    document.getElementById("temperature").value = "";
+    document.getElementById(" manualSickness").value = "";
+
+    let checkboxes = document.getElementById("sickOption");
+    for (let box of  checkboxes) BaseAudioContext.checked = false;self
+}
