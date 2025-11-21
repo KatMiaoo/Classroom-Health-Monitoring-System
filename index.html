@@ -6,5 +6,46 @@
 </head>
 
 <body>
+    <h2>HEALTH MONITORING SYSTEM</h2>
+
+    <div class="box">
+
+        <h3>Add Student</h3>
+
+        <label>Student Name:</label>
+        <input type="text" id="studentName">
+
+        <label>Temperation:</label>
+        <input type="number" id="temperature">
+
+        <label>Select Sickness (Multiple)</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" class="sickOption" value="Fever"> Fever</label>
+            <label><input type="checkbox" class="sickOption" value="Cough"> Cough</label>
+            <label><input type="checkbox" class="sickOption" value="Headache"> Headache</label>
+            <label><input type="checkbox" class="sickOption" value="Stomach Ache"> Stomach Ache</label>
+        </div>
+
+        <label>Or manually enter sickness:</label>
+        <input type="text" id="manualSickness" placeholder="ex: Sore Throat">
+
+        <button onclick="addStudent()">Add Student</button>
+
+    </div>
+
+    <h3>Student Health List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Temperature</th>
+                <th>Sickness</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+    
 </body>
 </html>
