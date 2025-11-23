@@ -37,7 +37,7 @@ function addStudent() {
         row.insertCell(1).innerHTML = firstName;
         row.insertCell(2).innerHTML = mi;
         row.insertCell(3).innerHTML = temp;
-        row.insertCell(4).innerHTML = sicknessText;
+        row.insertCell(4).innerHTML = formatSickness(sicknessText);
         row.insertCell(5).innerHTML = `
             <button class='btn-edit' onclick='editStudent(this)'>Edit</button>
             <button class='btn-delete' onclick='deleteStudent(this)'>Delete</button>
@@ -48,11 +48,35 @@ function addStudent() {
         row.cells[1].innerHTML = firstName;
         row.cells[2].innerHTML = mi;
         row.cells[3].innerHTML = temp;
-        row.cells[4].innerHTML = sicknessText;
+        row.cells[4].innerHTML = formatSickness(sicknessText);
         editIndex = null;
     }
 
+    sortTableBySurname();
+
     clearInputs();
+}
+
+function formatSickness(text) {
+    if (text.toLowerCase() === "none") {
+        return `<span class="sick-box sick-green">None</span>`;
+    } else {
+        return `<span class="sick-box sick-red">${text}</span>`;
+    }
+}
+
+
+function sortTableBySurname() {
+    let table = document.getElementById("studentTable");
+    let rows = Array.from(table.rows).slice(1);
+
+    rows.sort((a, b) => {
+        let surnameA = a.cells[0].innerText.toLowerCase();
+        let surnameB = b.cells[0].innerText.toLowerCase();
+        return surnameA.localeCompare(surnameB);
+    });
+
+    rows.forEach(r => table.appendChild(r));
 }
 
 function editStudent(button) {
@@ -82,6 +106,8 @@ function deleteStudent(button) {
     if (confirm("Delete this student?")) {
         let row = button.parentNode.parentNode;
         row.parentNode.removeChild(row);
+
+        sortTableBySurname();
     }
 }
 

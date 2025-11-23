@@ -79,6 +79,22 @@ table {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.sick-box {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    color: white;
+}
+
+.sick-red {
+    background: #d9534f;
+}
+
+.sick-green {
+    background: #5cb85c;
+}
+
 th {
     background: #4a76e8;
     color: white;
