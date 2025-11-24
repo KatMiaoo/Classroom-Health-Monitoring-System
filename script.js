@@ -121,3 +121,4 @@ function clearInputs() {
     let checkboxes = document.getElementsByClassName("sickOption");
     for (let box of checkboxes) box.checked = false;
 }
+
