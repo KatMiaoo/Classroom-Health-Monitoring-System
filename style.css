@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f3f6fa;
+    background: #e2e2e2;
 }
 
 h2 {
@@ -14,7 +14,7 @@ h2 {
 }
 
 .box {
-    width: 400px;
+    width: 420px;
     background: rgb(255, 255, 255);
     padding: 20px;
     margin: 25px auto;
